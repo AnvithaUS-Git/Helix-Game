@@ -5,12 +5,6 @@ using UnityEngine;
 
 namespace HelixJump
 {
-    public enum HJPlatformSliceType
-    {
-        eRegularSlice,
-        eDisabledSlice,
-        eDeathSlice
-    }
     public class HJPlatFormController : MonoBehaviour
     {
         private Color mBaseSliceColor = Color.white;
@@ -48,14 +42,11 @@ namespace HelixJump
         List<int> GetSlicesToBeDeactivated()
         {
             List<int> list = HJUtility.GetRandomNumber(mTempSingleSliceRefId, HJGameConstants.kTotalSlicesInPlatform - mCurrentPlatformDetails.BaseSliceCount);
-            list.ForEach(x => Debug.Log("Deactivated slices is  : " + x));
-
             return list;
         }
         List<int> GetSlicesThatAreDeathPoints()
         {
             List<int> list = HJUtility.GetRandomNumber(mTempSingleSliceRefId, mCurrentPlatformDetails.DeathSliceCount);
-            list.ForEach(x => Debug.Log("death point is : " + x));
             return list;
         }
     }

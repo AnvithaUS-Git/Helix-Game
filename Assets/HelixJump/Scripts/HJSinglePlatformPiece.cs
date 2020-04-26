@@ -36,7 +36,8 @@ namespace HelixJump
 
         public void OnHitDeathSlice()
         {
-            //restart the level
+            HJGameManager.Instance().CurrentGameState = HJGameState.eGamePlayerDeath;
+            HJPlayerScoreAndLevelManager.Instance().RestartCurrentLevel();
         }
     }
 }

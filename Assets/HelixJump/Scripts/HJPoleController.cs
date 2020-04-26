@@ -40,7 +40,7 @@ namespace HelixJump
             List<HJPlatformDetails> platformDetails = HJConfigManager.Instance().GetPlatformDetailsForLevel(level);
             float initailYPos = HJGameConstants.kFirstPlatformYPos;
            
-            for (int i = 1; i < platformDetails.Count; i++)
+            for (int i = 0; i < platformDetails.Count; i++)
             {
                 GameObject platfm = Instantiate(mPlatformPrefab, this.transform);
                 

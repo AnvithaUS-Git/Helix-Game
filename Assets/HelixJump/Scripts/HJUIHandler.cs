@@ -5,8 +5,6 @@ using TMPro;
 
 namespace HelixJump
 {
-
-
     public class HJUIHandler : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI mCurrentScoreText;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace HelixJump
 {
-    public class HJPlayerScoreAndLevelManager : MonoBehaviour
+    public class HJPlayerScoreAndLevelManager
     {
         private static HJPlayerScoreAndLevelManager mInstance;
 
@@ -26,9 +26,9 @@ namespace HelixJump
             set
             {
                 mCurrentScore = value;
-                if (mCurrentScore > mBestScore)
+                if (mCurrentScore > BestScore)
                 {
-                    mBestScore = mCurrentScore;
+                    BestScore = mCurrentScore;
                 }
             }
         }
@@ -62,7 +62,7 @@ namespace HelixJump
         public void RestartCurrentLevel()
         {
             CurrentScore = 0;
-            FindObjectOfType<HJBallController>().ResetBallPosition();
+           // FindObjectOfType<HJBallController>().ResetBallPosition();
         }
 
     }
