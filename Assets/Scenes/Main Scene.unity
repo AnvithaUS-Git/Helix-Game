@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 433961132}
   - component: {fileID: 433961131}
   - component: {fileID: 433961130}
+  - component: {fileID: 433961133}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -188,12 +189,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433961129}
   m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
-  m_LocalPosition: {x: 0, y: 20, z: -15}
+  m_LocalPosition: {x: 0, y: 21.56, z: -14.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
+--- !u!114 &433961133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433961129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fadf3a40303cb854fa1f07abf9182280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mBall: {fileID: 1919419370}
 --- !u!1 &1616042081
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +313,7 @@ GameObject:
   - component: {fileID: 1919419368}
   - component: {fileID: 1919419367}
   - component: {fileID: 1919419366}
+  - component: {fileID: 1919419371}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -329,7 +344,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919419365}
-  m_Material: {fileID: 13400000, guid: 7e7c8fa0261ab03438ba5742acad1fc8, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -394,6 +409,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1919419371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919419365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b122b7374eb34a74a8f6a9854dafe04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mBallRigidBody: {fileID: 1919419366}
+  mImpulseForce: 5
 --- !u!1 &1961276703
 GameObject:
   m_ObjectHideFlags: 0
