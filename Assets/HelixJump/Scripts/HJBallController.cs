@@ -20,6 +20,15 @@ namespace HelixJump
         {
             mBallMeshRenderer.material.color = HJConfigManager.Instance().GetBallColorFor(HJPlayerScoreAndLevelManager.Instance().CurrentLevel);
         }
+        private void OnEnable()
+        {
+            HJGameEventHandler.Instance().OnPlayerDeathEvent += ResetBallPosition;
+        }
+
+        private void OnDisable()
+        {
+            HJGameEventHandler.Instance().OnPlayerDeathEvent -= ResetBallPosition;
+        }
         private void OnCollisionEnter(Collision collision)
         {
             if (mIgnoreNextCollison)

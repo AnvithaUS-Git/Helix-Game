@@ -62,7 +62,7 @@ namespace HelixJump
         public void RestartCurrentLevel()
         {
             CurrentScore = 0;
-           // FindObjectOfType<HJBallController>().ResetBallPosition();
+            HJGameEventHandler.Instance().TriggerOnPlayerDeathEvent();
         }
 
     }

@@ -12,11 +12,17 @@ public class HJGameEventHandler
     }
 
     public delegate void OnScoreChangedDel(int score);
+    public delegate void OnPlayerDeath();
 
     public event OnScoreChangedDel OnScoreChangedEvent;
+    public event OnPlayerDeath OnPlayerDeathEvent;
 
     public void TriggerOnScoreChangedEvent(int score)
     {
         OnScoreChangedEvent?.Invoke(score);
+    }
+    public void TriggerOnPlayerDeathEvent()
+    {
+        OnPlayerDeathEvent?.Invoke();
     }
 }

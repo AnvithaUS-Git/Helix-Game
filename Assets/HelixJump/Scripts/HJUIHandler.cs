@@ -10,6 +10,10 @@ namespace HelixJump
         [SerializeField] private TextMeshProUGUI mCurrentScoreText;
         [SerializeField] private TextMeshProUGUI mBestScoreText;
 
+        private void Start()
+        {
+            mBestScoreText.text = string.Format(HJGameConstants.kBestScoreText, HJPlayerScoreAndLevelManager.Instance().BestScore);
+        }
         private void OnEnable()
         {
             HJGameEventHandler.Instance().OnScoreChangedEvent += SetScoreTextInUI;
