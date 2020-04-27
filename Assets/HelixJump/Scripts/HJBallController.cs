@@ -57,6 +57,7 @@ namespace HelixJump
         public void ResetBallPosition()
         {
             transform.position = mInitailBallPos;
+            mBallMeshRenderer.material.color = HJConfigManager.Instance().GetBallColorFor(HJPlayerScoreAndLevelManager.Instance().CurrentLevel);
         }
     }
 }

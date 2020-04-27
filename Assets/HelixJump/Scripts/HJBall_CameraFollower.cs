@@ -46,6 +46,7 @@ namespace HelixJump
         void ResetCameraPos()
         {
             transform.position = mInitialCameraPos;
+            mCamera.backgroundColor = HJConfigManager.Instance().GetBackgroundColorForLevel(HJPlayerScoreAndLevelManager.Instance().CurrentLevel);
         }
     }
 }

@@ -12,7 +12,6 @@ namespace HelixJump
         private List<GameObject> mInstantiatedPlatforms = new List<GameObject>();
         private void Start()
         {
-            mPoleMaterial.material.color = HJConfigManager.Instance().GetPoleColorFor(HJPlayerScoreAndLevelManager.Instance().CurrentLevel);
             InitializePlatformsForLevel();
         }
 
@@ -50,6 +49,7 @@ namespace HelixJump
 
         public void InitializePlatformsForLevel()
         {
+            mPoleMaterial.material.color = HJConfigManager.Instance().GetPoleColorFor(HJPlayerScoreAndLevelManager.Instance().CurrentLevel);
             int level = HJPlayerScoreAndLevelManager.Instance().CurrentLevel;
             List<HJPlatformDetails> platformDetails = HJConfigManager.Instance().GetPlatformDetailsForLevel(level);
             float initailYPos = HJGameConstants.kFirstPlatformYPos;

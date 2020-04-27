@@ -26,6 +26,9 @@ namespace HelixJump
                 case HJPlatformSliceType.eDeathSlice:
                     mMeshRenderer.material.color = Color.red;
                     break;
+                case HJPlatformSliceType.eRegularSlice:
+                    mMeshRenderer.material.color = HJConfigManager.Instance().GetBasePlatformColor(HJPlayerScoreAndLevelManager.Instance().CurrentLevel);
+                    break;
             }
         }
   
