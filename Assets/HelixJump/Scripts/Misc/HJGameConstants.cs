@@ -23,6 +23,7 @@ public static class HJGameConstants
     public const string kPoleColorKey = "pl_clr";
     public const string kBasePlatformColorKey = "bs_clr";
     public const string kBallColorKey = "ball_clr";
+    public const string kDeathBaseColor = "dth_clr";
     public const string kScoreUnitKey = "scr_unt";
     public const string kPlatformDetailKey = "plt_dtl";
 

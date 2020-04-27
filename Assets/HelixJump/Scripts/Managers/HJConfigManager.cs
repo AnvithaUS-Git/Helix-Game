@@ -26,13 +26,16 @@ namespace HelixJump
 
         public void ReadAllConfigFromFile()
         {
-            string filePath = string.Format(HJGameConstants.kConfigFilePath, HJPlayerScoreAndLevelManager.Instance().CurrentLevel);
-            Debug.Log(filePath);
-            TextAsset txt = (TextAsset)Resources.Load(filePath, typeof(TextAsset));
-            string json = txt.text;
-            
-            if (mAllLevelDetails.FindIndex(x => x.LevelId == HJPlayerScoreAndLevelManager.Instance().CurrentLevel) < 0)
-                mAllLevelDetails.Add(JsonConvert.DeserializeObject<HJLevelDetails>(json));
+            for (int i = 1; i <= kTotalGameLevels; i++)
+            {
+                string filePath = string.Format(HJGameConstants.kConfigFilePath,i);
+                Debug.Log(filePath);
+                TextAsset txt = (TextAsset)Resources.Load(filePath, typeof(TextAsset));
+                string json = txt.text;
+
+                if (mAllLevelDetails.FindIndex(x => x.LevelId == HJPlayerScoreAndLevelManager.Instance().CurrentLevel) < 0)
+                    mAllLevelDetails.Add(JsonConvert.DeserializeObject<HJLevelDetails>(json));
+            }
         }
         public List<HJPlatformDetails> GetPlatformDetailsForLevel(int level)
         {
@@ -40,6 +43,7 @@ namespace HelixJump
         }
         public int GetTotalPlatformCountForLevel(int level)
         {
+            Debug.Log(level);
             return mAllLevelDetails.Find(x => x.LevelId == level).PlatformDetails.Count;
         }
 
@@ -71,6 +75,12 @@ namespace HelixJump
             string color = mAllLevelDetails.Find(x => x.LevelId == level).BasePlatformSliceColor;
             return HJUtility.ConvertHexaToColor(color);
         }
+        public Color GetDeathPaltformColor(int level)
+        {
+            string color = mAllLevelDetails.Find(x => x.LevelId == level).DeathBaseColor;
+            return HJUtility.ConvertHexaToColor(color);
+        }
+
         public float GetDistanceBetweenPlatforms(int level)
         {
             return mAllLevelDetails.Find(x => x.LevelId == level).DistanceBetPlatform;

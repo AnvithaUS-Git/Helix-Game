@@ -25,6 +25,10 @@ namespace HelixJump
         [JsonProperty(HJGameConstants.kBallColorKey)]
         public string BallColor { get; set; }
 
+        [JsonProperty(HJGameConstants.kDeathBaseColor)]
+        public string DeathBaseColor { get; set; }
+
+
         [JsonProperty(HJGameConstants.kScoreUnitKey)]
         public int ScoreUnit { get; set; }
 

@@ -81,7 +81,6 @@ namespace HelixJump
         {
             NumberOfPlatformsPassed = 0;
             CurrentLevel = Mathf.Clamp(CurrentLevel + 1, 1, HJConfigManager.Instance().GetTotalNumberOfLevelsInGame());
-            HJConfigManager.Instance().ReadAllConfigFromFile();
         }
     }
 }

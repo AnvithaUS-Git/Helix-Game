@@ -2,10 +2,11 @@
   {
    "lvl_id":2,
    "dis_plt":0.15,
-   "bg_clr":"BDD0AB",
-   "pl_clr":"EDD490",
-   "bs_clr":"DCBA53",
-   "ball_clr":"D3E243",
+   "bg_clr":"87C1EA",
+   "pl_clr":"EDD891",
+   "bs_clr":"FFE064",
+   "ball_clr":"CBD546",
+   "dth_clr":"F16320",
    "scr_unt":2,
    "plt_dtl":[
        {
