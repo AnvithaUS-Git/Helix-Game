@@ -12,10 +12,13 @@ public class HJGameEventHandler
     }
 
     public delegate void OnScoreChangedDel(int score);
-    public delegate void OnPlayerDeath();
+    public delegate void voidDelegate();
 
     public event OnScoreChangedDel OnScoreChangedEvent;
-    public event OnPlayerDeath OnPlayerDeathEvent;
+    public event voidDelegate OnPlayerDeathEvent;
+    public event voidDelegate OnRetrySameLevel;
+    public event voidDelegate OnCurrentLevelPassed;
+    public event voidDelegate OnNextLevelLoad;
 
     public void TriggerOnScoreChangedEvent(int score)
     {
@@ -24,5 +27,17 @@ public class HJGameEventHandler
     public void TriggerOnPlayerDeathEvent()
     {
         OnPlayerDeathEvent?.Invoke();
+    }
+    public void TriggerRetrySameLevelEvent()
+    {
+        OnRetrySameLevel?.Invoke();
+    }
+    public void TriggerOnCurrentLevelPassedEvent()
+    {
+        OnCurrentLevelPassed?.Invoke();
+    }
+    public void TriggerOnNextLevelLoadEvent()
+    {
+        OnNextLevelLoad?.Invoke();
     }
 }

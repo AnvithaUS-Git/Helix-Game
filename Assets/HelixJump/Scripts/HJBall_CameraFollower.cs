@@ -19,12 +19,14 @@ namespace HelixJump
         }
         private void OnEnable()
         {
-            HJGameEventHandler.Instance().OnPlayerDeathEvent += ResetCameraPos;
+            HJGameEventHandler.Instance().OnRetrySameLevel += ResetCameraPos;
+            HJGameEventHandler.Instance().OnNextLevelLoad += ResetCameraPos;
         }
 
         private void OnDisable()
         {
-            HJGameEventHandler.Instance().OnPlayerDeathEvent -= ResetCameraPos;
+            HJGameEventHandler.Instance().OnRetrySameLevel -= ResetCameraPos;
+            HJGameEventHandler.Instance().OnNextLevelLoad -= ResetCameraPos;
         }
         private void Start()
         {

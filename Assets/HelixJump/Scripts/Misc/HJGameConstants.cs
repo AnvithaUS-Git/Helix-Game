@@ -5,7 +5,7 @@ using UnityEngine;
 public static class HJGameConstants
 {
 
-    public const string kConfigFilePath = @"Config/helix_jump_config";
+    public const string kConfigFilePath = @"Config/helix_jump_config_{0}";
     public const string kBestScoreText = "Best : {0}";
    
     public const int kTotalSlicesInPlatform = 12;
@@ -25,4 +25,16 @@ public static class HJGameConstants
     public const string kBallColorKey = "ball_clr";
     public const string kScoreUnitKey = "scr_unt";
     public const string kPlatformDetailKey = "plt_dtl";
+
+
+
+    //Text strings
+    public const string kGameStartText = "Start";
+
+    public const string kCompletionPercentText = "{0}% ACHIEVED";
+    public const string kRS_BestScoreText = "BEST SCORE : {0}";
+    public const string kTapToRetryText = "Tap to retry";
+
+    public const string kLevelPassedText = "Level {0} passed";
+    public const string kTapToContinueText = "TAP TO CONTINUE";
 }

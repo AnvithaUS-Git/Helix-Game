@@ -12,6 +12,8 @@ namespace HelixJump
     {
         private static HJConfigManager mInstance;
         private List<HJLevelDetails> mAllLevelDetails = new List<HJLevelDetails>();
+        private const int kTotalGameLevels = 5;
+
         public static HJConfigManager Instance()
         {
             return mInstance = mInstance == null ? new HJConfigManager() : mInstance;
@@ -24,16 +26,13 @@ namespace HelixJump
 
         public void ReadAllConfigFromFile()
         {
-            //string fileData = string.Empty;
-            //List<HJLevelDetails> disList = null;
-            //using (StreamReader reader = new StreamReader(HJGameConstants.kConfigFilePath))
-            //{
-            //    fileData = reader.ReadToEnd();
-            //    disList = JsonConvert.DeserializeObject<List<HJLevelDetails>>(fileData) ?? new List<HJLevelDetails>();
-            //}
-            TextAsset txt = (TextAsset)Resources.Load(HJGameConstants.kConfigFilePath, typeof(TextAsset));
+            string filePath = string.Format(HJGameConstants.kConfigFilePath, HJPlayerScoreAndLevelManager.Instance().CurrentLevel);
+            Debug.Log(filePath);
+            TextAsset txt = (TextAsset)Resources.Load(filePath, typeof(TextAsset));
             string json = txt.text;
-            mAllLevelDetails = JsonConvert.DeserializeObject<List<HJLevelDetails>>(json);
+            
+            if (mAllLevelDetails.FindIndex(x => x.LevelId == HJPlayerScoreAndLevelManager.Instance().CurrentLevel) < 0)
+                mAllLevelDetails.Add(JsonConvert.DeserializeObject<HJLevelDetails>(json));
         }
         public List<HJPlatformDetails> GetPlatformDetailsForLevel(int level)
         {
@@ -44,6 +43,10 @@ namespace HelixJump
             return mAllLevelDetails.Find(x => x.LevelId == level).PlatformDetails.Count;
         }
 
+        public int GetTotalNumberOfLevelsInGame()
+        {
+            return kTotalGameLevels;
+        }
         public int GetScoreUnitForLevel(int level)
         {
             return mAllLevelDetails.Find(x => x.LevelId == level).ScoreUnit;

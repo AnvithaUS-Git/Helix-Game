@@ -8,7 +8,8 @@ namespace HelixJump
     {
         eRegularSlice,
         eDisabledSlice,
-        eDeathSlice
+        eDeathSlice,
+        eGoalSlice
     }
 
     public enum HJGameState

@@ -22,26 +22,31 @@ namespace HelixJump
         }
         private void OnEnable()
         {
-            HJGameEventHandler.Instance().OnPlayerDeathEvent += ResetBallPosition;
+            HJGameEventHandler.Instance().OnRetrySameLevel += ResetBallPosition;
+            HJGameEventHandler.Instance().OnNextLevelLoad += ResetBallPosition;
         }
 
         private void OnDisable()
         {
-            HJGameEventHandler.Instance().OnPlayerDeathEvent -= ResetBallPosition;
+            HJGameEventHandler.Instance().OnRetrySameLevel -= ResetBallPosition;
+            HJGameEventHandler.Instance().OnNextLevelLoad += ResetBallPosition;
         }
         private void OnCollisionEnter(Collision collision)
         {
-            if (mIgnoreNextCollison)
-                return;
+            if (HJGameManager.Instance().CurrentGameState == HJGameState.eGamePlaying)
+            {
+                if (mIgnoreNextCollison)
+                    return;
 
-            HJSinglePlatformPiece slice = collision.gameObject.GetComponent<HJSinglePlatformPiece>();
-            if (slice.IsDeathSlice())
-                slice.OnHitDeathSlice();
+                HJSinglePlatformPiece slice = collision.gameObject.GetComponent<HJSinglePlatformPiece>();
+                slice.CheckWhetherDeathOrGoal();
+            }
 
             mBallRigidBody.velocity = Vector3.zero;
             mBallRigidBody.AddForce(Vector3.up * mImpulseForce, ForceMode.Impulse);
             mIgnoreNextCollison = true;
             Invoke("AllowNextCollision", 0.2f);
+
         }
 
         void AllowNextCollision()
@@ -51,7 +56,7 @@ namespace HelixJump
 
         public void ResetBallPosition()
         {
-            this.transform.position = mInitailBallPos;
+            transform.position = mInitailBallPos;
         }
     }
 }

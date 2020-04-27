@@ -34,10 +34,28 @@ namespace HelixJump
             return mCurrentSliceType == HJPlatformSliceType.eDeathSlice;
         }
 
-        public void OnHitDeathSlice()
+        void OnHitDeathSlice()
         {
+            Debug.Log("Death slice ");
             HJGameManager.Instance().CurrentGameState = HJGameState.eGamePlayerDeath;
-            HJPlayerScoreAndLevelManager.Instance().RestartCurrentLevel();
+            HJGameEventHandler.Instance().TriggerOnPlayerDeathEvent();
+        }
+        void OnGoalReached()
+        {
+            HJGameEventHandler.Instance().TriggerOnCurrentLevelPassedEvent();
+        }
+
+        public void CheckWhetherDeathOrGoal()
+        {
+            switch(mCurrentSliceType)
+            {
+                case HJPlatformSliceType.eDeathSlice:
+                    OnHitDeathSlice();
+                    break;
+                case HJPlatformSliceType.eGoalSlice:
+                    OnGoalReached();
+                    break;
+            }
         }
     }
 }

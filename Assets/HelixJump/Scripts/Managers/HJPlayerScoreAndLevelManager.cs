@@ -50,8 +50,16 @@ namespace HelixJump
 
         public int CurrentLevel
         {
-            get { return mCurrentLevel; }
-            set { mCurrentLevel = value; }
+            get
+            {
+                mCurrentLevel = PlayerPrefs.GetInt("crnt_lvl");
+                return mCurrentLevel > 0 ? mCurrentLevel : 1;
+            }
+            set
+            {
+                mCurrentLevel = value;
+                PlayerPrefs.SetInt("crnt_lvl", mCurrentLevel);
+            }
         }
 
         public int NumberOfPlatformsPassed { get; set; }
@@ -67,8 +75,13 @@ namespace HelixJump
         {
             CurrentScore = 0;
             NumberOfPlatformsPassed = 0;
-            HJGameEventHandler.Instance().TriggerOnPlayerDeathEvent();
         }
 
+        public void LoadNextLevel()
+        {
+            NumberOfPlatformsPassed = 0;
+            CurrentLevel = Mathf.Clamp(CurrentLevel + 1, 1, HJConfigManager.Instance().GetTotalNumberOfLevelsInGame());
+            HJConfigManager.Instance().ReadAllConfigFromFile();
+        }
     }
 }

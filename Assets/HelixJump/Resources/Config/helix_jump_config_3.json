@@ -1,12 +1,12 @@
-[
+
   {
-   "lvl_id":1,
+   "lvl_id":2,
    "dis_plt":0.15,
-   "bg_clr":"90A7CC",
-   "pl_clr":"875959",
-   "bs_clr":"FFF800",
-   "ball_clr":"10E331",
-   "scr_unt":1,
+   "bg_clr":"BDD0AB",
+   "pl_clr":"EDD490",
+   "bs_clr":"DCBA53",
+   "ball_clr":"D3E243",
+   "scr_unt":2,
    "plt_dtl":[
        {
         "bs_cnt":11,
@@ -39,7 +39,14 @@
        {
         "bs_cnt":12,
         "dth_cnt":0
+	   },
+       {
+        "bs_cnt":12,
+        "dth_cnt":0
+	   },
+       {
+        "bs_cnt":12,
+        "dth_cnt":0
 	   }
    ]
   }
-]

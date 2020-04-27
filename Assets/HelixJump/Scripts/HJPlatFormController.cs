@@ -16,22 +16,31 @@ namespace HelixJump
 
 
         }
-        public void InitializePlatformForLevel(HJPlatformDetails platformDet)
+        public void InitializePlatformForLevel(HJPlatformDetails platformDet,bool isLastPaltform)
         {
             mCurrentPlatformDetails = platformDet;
-
-            mTempSingleSliceRefId = Enumerable.Range(0, HJGameConstants.kTotalSlicesInPlatform-1).ToList();
-
-            foreach (int sliceId in GetSlicesToBeDeactivated())
+            if (!isLastPaltform)
             {
-                mSinglePlatformSlice[sliceId].Initialize(sliceId, HJPlatformSliceType.eDisabledSlice);
-                mTempSingleSliceRefId.Remove(sliceId);
+                mTempSingleSliceRefId = Enumerable.Range(0, HJGameConstants.kTotalSlicesInPlatform - 1).ToList();
+
+                foreach (int sliceId in GetSlicesToBeDeactivated())
+                {
+                    mSinglePlatformSlice[sliceId].Initialize(sliceId, HJPlatformSliceType.eDisabledSlice);
+                    mTempSingleSliceRefId.Remove(sliceId);
+                }
+
+                foreach (int sliceId in GetSlicesThatAreDeathPoints())
+                {
+                    mSinglePlatformSlice[sliceId].Initialize(sliceId, HJPlatformSliceType.eDeathSlice);
+                    mTempSingleSliceRefId.Remove(sliceId);
+                }
             }
-
-            foreach (int sliceId in GetSlicesThatAreDeathPoints())
+            else
             {
-                mSinglePlatformSlice[sliceId].Initialize(sliceId, HJPlatformSliceType.eDeathSlice);
-                mTempSingleSliceRefId.Remove(sliceId);
+                for(int i=0;i<mSinglePlatformSlice.Count;i++)
+                {
+                    mSinglePlatformSlice[i].Initialize(i, HJPlatformSliceType.eGoalSlice);
+                }
             }
         }
         private void OnTriggerEnter(Collider other)
