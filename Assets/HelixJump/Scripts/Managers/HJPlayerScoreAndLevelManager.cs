@@ -11,6 +11,7 @@ namespace HelixJump
         private int mCurrentScore;
         private int mBestScore;
         private int mCurrentLevel = 1;
+        private int mNumberOfPlatformsPassed = 0;
 
         public static HJPlayerScoreAndLevelManager Instance()
         {
@@ -53,15 +54,19 @@ namespace HelixJump
             set { mCurrentLevel = value; }
         }
 
+        public int NumberOfPlatformsPassed { get; set; }
+
         public void AddScore(int scoreUnit)
         {
             CurrentScore += scoreUnit;
+            NumberOfPlatformsPassed++;
             HJGameEventHandler.Instance().TriggerOnScoreChangedEvent(CurrentScore);
         }
 
         public void RestartCurrentLevel()
         {
             CurrentScore = 0;
+            NumberOfPlatformsPassed = 0;
             HJGameEventHandler.Instance().TriggerOnPlayerDeathEvent();
         }
 

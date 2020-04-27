@@ -39,6 +39,10 @@ namespace HelixJump
         {
             return mAllLevelDetails.Find(x => x.LevelId == level).PlatformDetails;
         }
+        public int GetTotalPlatformCountForLevel(int level)
+        {
+            return mAllLevelDetails.Find(x => x.LevelId == level).PlatformDetails.Count;
+        }
 
         public int GetScoreUnitForLevel(int level)
         {

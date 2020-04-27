@@ -8,7 +8,9 @@ namespace HelixJump
     {
         [SerializeField] private Transform mBall;
         [SerializeField] private Camera mCamera;
+        [SerializeField] private float mSmoothness;
         private float mOffsetBetCamAndBall;
+        private Vector3 mVelocity;
         private void Awake()
         {
             mOffsetBetCamAndBall = transform.position.y - mBall.position.y;
@@ -22,7 +24,12 @@ namespace HelixJump
         private void LateUpdate()
         {
             float currentYPosOfBall = mBall.position.y;
-            this.transform.position = new Vector3(this.transform.position.x, currentYPosOfBall + mOffsetBetCamAndBall, this.transform.position.z);
+            if (currentYPosOfBall + mOffsetBetCamAndBall < this.transform.position.y)
+            {
+                transform.position = new Vector3(this.transform.position.x, currentYPosOfBall + mOffsetBetCamAndBall, this.transform.position.z);
+                //this.transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref mVelocity, mSmoothness);
+            }
+
         }
     }
 }
