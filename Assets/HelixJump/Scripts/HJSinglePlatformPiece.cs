@@ -39,7 +39,6 @@ namespace HelixJump
 
         void OnHitDeathSlice()
         {
-            Debug.Log("Death slice ");
             HJGameManager.Instance().CurrentGameState = HJGameState.eGamePlayerDeath;
             HJGameEventHandler.Instance().TriggerOnPlayerDeathEvent();
         }

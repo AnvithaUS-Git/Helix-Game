@@ -28,13 +28,11 @@ namespace HelixJump
         {
             for (int i = 1; i <= kTotalGameLevels; i++)
             {
-                string filePath = string.Format(HJGameConstants.kConfigFilePath,i);
-                Debug.Log(filePath);
+                string filePath = string.Format(HJGameConstants.kConfigFilePath, i);
                 TextAsset txt = (TextAsset)Resources.Load(filePath, typeof(TextAsset));
                 string json = txt.text;
 
-                if (mAllLevelDetails.FindIndex(x => x.LevelId == HJPlayerScoreAndLevelManager.Instance().CurrentLevel) < 0)
-                    mAllLevelDetails.Add(JsonConvert.DeserializeObject<HJLevelDetails>(json));
+                mAllLevelDetails.Add(JsonConvert.DeserializeObject<HJLevelDetails>(json));
             }
         }
         public List<HJPlatformDetails> GetPlatformDetailsForLevel(int level)
@@ -43,7 +41,6 @@ namespace HelixJump
         }
         public int GetTotalPlatformCountForLevel(int level)
         {
-            Debug.Log(level);
             return mAllLevelDetails.Find(x => x.LevelId == level).PlatformDetails.Count;
         }
 

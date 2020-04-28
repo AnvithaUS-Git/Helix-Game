@@ -118,6 +118,7 @@ namespace HelixJump
         void OnRetryBtnClicked()
         {
             Time.timeScale = 1.0f;
+            HJGameManager.Instance().CurrentGameState = HJGameState.eGamePlaying;
             HJGameEventHandler.Instance().TriggerRetrySameLevelEvent();
             HJPlayerScoreAndLevelManager.Instance().RestartCurrentLevel();
             mRetryScreen.SetActive(false);
