@@ -9,7 +9,7 @@ public static class HJGameConstants
     public const string kBestScoreText = "Best : {0}";
    
     public const int kTotalSlicesInPlatform = 12;
-    public const float kFirstPlatformYPos = 0.9f;
+    public const float kFirstPlatformYPos = 0.97f;
 
 
     //HJPlatformDetails

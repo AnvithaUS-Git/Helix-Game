@@ -1,7 +1,7 @@
 
   {
    "lvl_id":2,
-   "dis_plt":0.15,
+   "dis_plt":0.031,
    "bg_clr":"999081",
    "pl_clr":"E2E2B0",
    "bs_clr":"515380",
@@ -14,19 +14,19 @@
         "dth_cnt":0
 	   },
        {
-        "bs_cnt":10,
+        "bs_cnt":8,
         "dth_cnt":1
 	   },
        {
-        "bs_cnt":8,
-        "dth_cnt":2
-	   },
-        {
         "bs_cnt":9,
         "dth_cnt":1
 	   },
         {
-        "bs_cnt":8,
+        "bs_cnt":6,
+        "dth_cnt":3
+	   },
+        {
+        "bs_cnt":9,
         "dth_cnt":2
 	   },
         {
@@ -34,16 +34,36 @@
         "dth_cnt":0
 	   },
         {
-        "bs_cnt":7,
-        "dth_cnt":2
+        "bs_cnt":9,
+        "dth_cnt":0
 	   },
        {
         "bs_cnt":5,
-        "dth_cnt":4
+        "dth_cnt":3
 	   },
        {
-        "bs_cnt":4,
+        "bs_cnt":8,
+        "dth_cnt":0
+	   },
+       {
+        "bs_cnt":11,
+        "dth_cnt":0
+	   },
+        {
+        "bs_cnt":6,
+        "dth_cnt":3
+	   },
+        {
+        "bs_cnt":8,
         "dth_cnt":2
+	   },
+       {
+        "bs_cnt":10,
+        "dth_cnt":1
+	   },
+       {
+        "bs_cnt":6,
+        "dth_cnt":3
 	   },
        {
         "bs_cnt":12,

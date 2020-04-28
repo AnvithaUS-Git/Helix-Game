@@ -82,9 +82,12 @@ namespace HelixJump
         void SetProgressBarDetails()
         {
             int currentLevel = HJPlayerScoreAndLevelManager.Instance().CurrentLevel;
+            int totalLevelsInGame = HJConfigManager.Instance().GetTotalNumberOfLevelsInGame();
+            
             mCurrentLevelText.text = currentLevel.ToString();
-            mNextLevelText.text = currentLevel + 1.ToString();
-            float completionPercent = (float)(HJPlayerScoreAndLevelManager.Instance().NumberOfPlatformsPassed + 1) / (float)HJConfigManager.Instance().GetTotalPlatformCountForLevel(currentLevel);
+            mNextLevelText.text = (currentLevel + 1)> totalLevelsInGame?"": (currentLevel + 1).ToString();
+            
+            float completionPercent = (float)(HJPlayerScoreAndLevelManager.Instance().NumberOfPlatformsPassed) / (float)(HJConfigManager.Instance().GetTotalPlatformCountForLevel(currentLevel)-1);
             mProgressBar.fillAmount = completionPercent;
         }
         #region Game Start UI
@@ -110,7 +113,7 @@ namespace HelixJump
             int currentLevel = HJPlayerScoreAndLevelManager.Instance().CurrentLevel;
             float completionPercent = (float)(HJPlayerScoreAndLevelManager.Instance().NumberOfPlatformsPassed) / (float)HJConfigManager.Instance().GetTotalPlatformCountForLevel(currentLevel);
 
-            mCompeletionPercentText.text = string.Format(HJGameConstants.kCompletionPercentText, completionPercent * 100);
+            mCompeletionPercentText.text = string.Format(HJGameConstants.kCompletionPercentText, (int)(completionPercent * 100));
             mRS_BestScoreText.text = string.Format(HJGameConstants.kRS_BestScoreText, HJPlayerScoreAndLevelManager.Instance().BestScore);
             mTapToRetryText.text = HJGameConstants.kTapToRetryText;
         }

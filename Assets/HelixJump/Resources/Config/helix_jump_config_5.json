@@ -1,7 +1,7 @@
 
   {
    "lvl_id":5,
-   "dis_plt":0.15,
+   "dis_plt":0.025,
    "bg_clr":"C5D58C",
    "pl_clr":"514A48",
    "bs_clr":"D58950",
@@ -14,16 +14,16 @@
         "dth_cnt":0
 	   },
        {
-        "bs_cnt":10,
-        "dth_cnt":1
+        "bs_cnt":7,
+        "dth_cnt":3
 	   },
        {
         "bs_cnt":8,
         "dth_cnt":2
 	   },
         {
-        "bs_cnt":9,
-        "dth_cnt":1
+        "bs_cnt":5,
+        "dth_cnt":4
 	   },
         {
         "bs_cnt":8,
@@ -34,16 +34,77 @@
         "dth_cnt":0
 	   },
         {
+        "bs_cnt":9,
+        "dth_cnt":2
+	   },
+       {
+        "bs_cnt":10,
+        "dth_cnt":0
+	   },
+       {
+        "bs_cnt":8,
+        "dth_cnt":2
+	   },
+       {
+        "bs_cnt":9,
+        "dth_cnt":1
+	   },
+	   {
         "bs_cnt":7,
         "dth_cnt":2
 	   },
        {
-        "bs_cnt":12,
+        "bs_cnt":8,
+        "dth_cnt":3
+	   },
+       {
+        "bs_cnt":9,
+        "dth_cnt":2
+	   },
+        {
+        "bs_cnt":5,
+        "dth_cnt":3
+	   },
+        {
+        "bs_cnt":8,
+        "dth_cnt":0
+	   },
+        {
+        "bs_cnt":10,
+        "dth_cnt":0
+	   },
+        {
+        "bs_cnt":8,
+        "dth_cnt":2
+	   },
+       {
+        "bs_cnt":9,
+        "dth_cnt":2
+	   },
+       {
+        "bs_cnt":5,
         "dth_cnt":0
 	   },
        {
-        "bs_cnt":12,
+        "bs_cnt":9,
+        "dth_cnt":2
+	   }
+	   ,
+        {
+        "bs_cnt":11,
         "dth_cnt":0
+	   },
+        {
+        "bs_cnt":7,
+        "dth_cnt":2
+	   },
+       {
+        "bs_cnt":9,
+        "dth_cnt":0
+	   },
+       {
+        "bs_cnt":5,
+        "dth_cnt":4
 	   },
        {
         "bs_cnt":12,

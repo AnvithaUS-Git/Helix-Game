@@ -11,11 +11,7 @@ namespace HelixJump
         [SerializeField] List<HJSinglePlatformPiece> mSinglePlatformSlice;
         private List<int> mTempSingleSliceRefId = new List<int>();
         HJPlatformDetails mCurrentPlatformDetails;
-        private void Start()
-        {
-
-
-        }
+    
         public void InitializePlatformForLevel(HJPlatformDetails platformDet,bool isLastPaltform)
         {
             mCurrentPlatformDetails = platformDet;
@@ -39,6 +35,7 @@ namespace HelixJump
             {
                 for(int i=0;i<mSinglePlatformSlice.Count;i++)
                 {
+                    this.gameObject.GetComponent<BoxCollider>().enabled = false;
                     mSinglePlatformSlice[i].Initialize(i, HJPlatformSliceType.eGoalSlice);
                 }
             }
@@ -50,7 +47,9 @@ namespace HelixJump
 
         List<int> GetSlicesToBeDeactivated()
         {
+            Debug.Log("---------------------------------------------------------------------");
             List<int> list = HJUtility.GetRandomNumber(mTempSingleSliceRefId, HJGameConstants.kTotalSlicesInPlatform - mCurrentPlatformDetails.BaseSliceCount);
+            list.ForEach(x => Debug.Log("Deactivated slices are " + x));
             return list;
         }
         List<int> GetSlicesThatAreDeathPoints()

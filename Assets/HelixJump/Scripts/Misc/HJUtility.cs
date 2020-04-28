@@ -28,10 +28,38 @@ public static class HJUtility
         return numbers.ToList();
     }
 
-    public static List<int> GetRandomNumber(List<int> numberList,int numberofElement)
+    public static List<int> GetRandomNumber(List<int> numberList, int numberofElement)
     {
+        List<int> selectedIndecies = new List<int>();
         var random = new System.Random();
-        return numberList.OrderBy(x => random.Next()).Take(numberofElement).ToList();
+        for (int i = 0; i < numberofElement; i++)
+        {
+            if (numberList.Count > 0)
+            {
+                Shuffle(numberList);
+                int index = UnityEngine.Random.Range(0, numberList.Count);
+                selectedIndecies.Add(numberList[index]);
+                numberList.RemoveAt(index);
+            }
+            else
+                break;
+        }
+        return selectedIndecies;
+
+    }
+
+    public static void Shuffle<T>(this IList<T> list)
+    {
+        int n = list.Count;
+        var random = new System.Random();
+        while (n > 1)
+        {
+            n--;
+            int k = random.Next(n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
     }
 
 

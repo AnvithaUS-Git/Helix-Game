@@ -1,7 +1,7 @@
 
   {
    "lvl_id":3,
-   "dis_plt":0.15,
+   "dis_plt":0.029,
    "bg_clr":"C3D38D",
    "pl_clr":"433D38",
    "bs_clr":"CF824C",
@@ -15,15 +15,15 @@
 	   },
        {
         "bs_cnt":10,
-        "dth_cnt":1
+        "dth_cnt":0
 	   },
        {
-        "bs_cnt":8,
-        "dth_cnt":2
+        "bs_cnt":3,
+        "dth_cnt":7
 	   },
         {
-        "bs_cnt":9,
-        "dth_cnt":1
+        "bs_cnt":5,
+        "dth_cnt":5
 	   },
         {
         "bs_cnt":8,
@@ -34,17 +34,50 @@
         "dth_cnt":0
 	   },
         {
-        "bs_cnt":7,
+        "bs_cnt":6,
         "dth_cnt":2
 	   },
+	   {
+        "bs_cnt":8,
+        "dth_cnt":3
+	   },
        {
-        "bs_cnt":12,
+        "bs_cnt":6,
         "dth_cnt":0
 	   },
        {
-        "bs_cnt":12,
+        "bs_cnt":11,
         "dth_cnt":0
 	   },
+        {
+        "bs_cnt":6,
+        "dth_cnt":2
+	   },
+        {
+        "bs_cnt":9,
+        "dth_cnt":2
+	   },
+        {
+        "bs_cnt":11,
+        "dth_cnt":0
+	   },
+        {
+        "bs_cnt":6,
+        "dth_cnt":5
+	   },
+	   {
+        "bs_cnt":5,
+        "dth_cnt":6
+	   },
+	   {
+        "bs_cnt":5,
+        "dth_cnt":6
+	   },
+	   {
+        "bs_cnt":11,
+        "dth_cnt":0
+	   },
+       
        {
         "bs_cnt":12,
         "dth_cnt":0

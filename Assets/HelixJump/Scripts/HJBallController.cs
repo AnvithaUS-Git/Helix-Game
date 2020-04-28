@@ -45,7 +45,7 @@ namespace HelixJump
             mBallRigidBody.velocity = Vector3.zero;
             mBallRigidBody.AddForce(Vector3.up * mImpulseForce, ForceMode.Impulse);
             mIgnoreNextCollison = true;
-            Invoke("AllowNextCollision", 0.2f);
+            Invoke("AllowNextCollision", 0.05f);
 
         }
 
