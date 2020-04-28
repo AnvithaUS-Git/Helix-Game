@@ -42,14 +42,12 @@ namespace HelixJump
         }
         private void OnTriggerEnter(Collider other)
         {
-            HJPlayerScoreAndLevelManager.Instance().AddScore(1);
+            HJPlayerScoreAndLevelManager.Instance().AddScore();
         }
 
         List<int> GetSlicesToBeDeactivated()
         {
-            Debug.Log("---------------------------------------------------------------------");
             List<int> list = HJUtility.GetRandomNumber(mTempSingleSliceRefId, HJGameConstants.kTotalSlicesInPlatform - mCurrentPlatformDetails.BaseSliceCount);
-            list.ForEach(x => Debug.Log("Deactivated slices are " + x));
             return list;
         }
         List<int> GetSlicesThatAreDeathPoints()

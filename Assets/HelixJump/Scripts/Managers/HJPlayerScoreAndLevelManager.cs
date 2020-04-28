@@ -64,8 +64,9 @@ namespace HelixJump
 
         public int NumberOfPlatformsPassed { get; set; }
 
-        public void AddScore(int scoreUnit)
+        public void AddScore()
         {
+            int scoreUnit = HJConfigManager.Instance().GetScoreUnitForLevel(CurrentLevel);
             CurrentScore += scoreUnit;
             NumberOfPlatformsPassed++;
             HJGameEventHandler.Instance().TriggerOnScoreChangedEvent(CurrentScore);
