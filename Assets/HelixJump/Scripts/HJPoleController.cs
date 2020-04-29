@@ -63,6 +63,7 @@ namespace HelixJump
                 platfm.GetComponent<HJPlatFormController>().InitializePlatformForLevel(platformDetails[i], i == platformDetails.Count - 1);
                
             }
+            DeactivateRemainingPaltforms(platformDetails.Count);
         }
 
         GameObject GetPlatformGameObject(int index)
@@ -74,6 +75,14 @@ namespace HelixJump
                 GameObject platform = Instantiate(mPlatformPrefab, this.transform);
                 mInstantiatedPlatforms.Add(platform);
                 return platform;
+            }
+        }
+
+        void DeactivateRemainingPaltforms(int startIndex)
+        {
+            for(int i= startIndex;i<mInstantiatedPlatforms.Count;i++)
+            {
+                mInstantiatedPlatforms[i].SetActive(false);
             }
         }
     }

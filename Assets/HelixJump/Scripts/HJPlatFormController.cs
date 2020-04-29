@@ -7,14 +7,15 @@ namespace HelixJump
 {
     public class HJPlatFormController : MonoBehaviour
     {
-        private Color mBaseSliceColor = Color.white;
         [SerializeField] List<HJSinglePlatformPiece> mSinglePlatformSlice;
         private List<int> mTempSingleSliceRefId = new List<int>();
         HJPlatformDetails mCurrentPlatformDetails;
-    
-        public void InitializePlatformForLevel(HJPlatformDetails platformDet,bool isLastPaltform)
+
+        public void InitializePlatformForLevel(HJPlatformDetails platformDet, bool isLastPaltform)
         {
             mCurrentPlatformDetails = platformDet;
+            mSinglePlatformSlice.ForEach(x => x.ClearAllVariableData());
+
             if (!isLastPaltform)
             {
                 mTempSingleSliceRefId = Enumerable.Range(0, HJGameConstants.kTotalSlicesInPlatform - 1).ToList();
@@ -33,7 +34,7 @@ namespace HelixJump
             }
             else
             {
-                for(int i=0;i<mSinglePlatformSlice.Count;i++)
+                for (int i = 0; i < mSinglePlatformSlice.Count; i++)
                 {
                     this.gameObject.GetComponent<BoxCollider>().enabled = false;
                     mSinglePlatformSlice[i].Initialize(i, HJPlatformSliceType.eGoalSlice);

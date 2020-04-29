@@ -81,7 +81,8 @@ namespace HelixJump
         public void LoadNextLevel()
         {
             NumberOfPlatformsPassed = 0;
-            CurrentLevel = Mathf.Clamp(CurrentLevel + 1, 1, HJConfigManager.Instance().GetTotalNumberOfLevelsInGame());
+            CurrentLevel = CurrentLevel + 1 > HJConfigManager.Instance().GetTotalNumberOfLevelsInGame() ? 1 : CurrentLevel + 1;
+            Debug.Log("Next level selected is Next level selected is Next level selected is Next level selected is " + CurrentLevel);
         }
     }
 }

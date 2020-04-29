@@ -83,10 +83,14 @@ namespace HelixJump
         {
             int currentLevel = HJPlayerScoreAndLevelManager.Instance().CurrentLevel;
             int totalLevelsInGame = HJConfigManager.Instance().GetTotalNumberOfLevelsInGame();
-            
-            mCurrentLevelText.text = currentLevel.ToString();
-            mNextLevelText.text = (currentLevel + 1)> totalLevelsInGame?"": (currentLevel + 1).ToString();
-            
+
+            //mCurrentLevelText.text = currentLevel.ToString();
+            //mNextLevelText.text = (currentLevel + 1)> totalLevelsInGame?"": (currentLevel + 1).ToString();
+
+            mCurrentLevelText.text = "0";
+            mNextLevelText.text = "100";
+
+
             float completionPercent = (float)(HJPlayerScoreAndLevelManager.Instance().NumberOfPlatformsPassed) / (float)(HJConfigManager.Instance().GetTotalPlatformCountForLevel(currentLevel)-1);
             mProgressBar.fillAmount = completionPercent;
         }

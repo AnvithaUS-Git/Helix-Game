@@ -7,8 +7,8 @@ namespace HelixJump
     public class HJSinglePlatformPiece : MonoBehaviour
     {
         [SerializeField] private Renderer mMeshRenderer;
-        private bool mIsLastPlatformPiece;
-        private bool mIsDeathSlice;
+        [SerializeField] private Color mBaseColor;
+
         private HJPlatformSliceType mCurrentSliceType;
         public void Initialize(int sliceId, HJPlatformSliceType sliceType)
         {
@@ -52,12 +52,19 @@ namespace HelixJump
             switch(mCurrentSliceType)
             {
                 case HJPlatformSliceType.eDeathSlice:
-                    OnHitDeathSlice();
+                    //OnHitDeathSlice();
                     break;
                 case HJPlatformSliceType.eGoalSlice:
                     OnGoalReached();
                     break;
             }
+        }
+
+        public void ClearAllVariableData()
+        {
+            gameObject.SetActive(true);
+            mMeshRenderer.material.color = mBaseColor;
+            mCurrentSliceType = HJPlatformSliceType.eNone;
         }
     }
 }

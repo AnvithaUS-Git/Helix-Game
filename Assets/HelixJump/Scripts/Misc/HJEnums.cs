@@ -6,6 +6,7 @@ namespace HelixJump
 {
     public enum HJPlatformSliceType
     {
+        eNone,
         eRegularSlice,
         eDisabledSlice,
         eDeathSlice,

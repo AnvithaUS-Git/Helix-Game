@@ -106,3 +106,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mMeshRenderer: {fileID: 23577808976779464}
+  mBaseColor: {r: 1, g: 0.972549, b: 0, a: 1}

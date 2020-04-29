@@ -36,6 +36,6 @@ public static class HJGameConstants
     public const string kRS_BestScoreText = "BEST SCORE : {0}";
     public const string kTapToRetryText = "Tap to retry";
 
-    public const string kLevelPassedText = "Level {0} passed";
+    public const string kLevelPassedText = "Level passed"; //"Level {0} passed"
     public const string kTapToContinueText = "TAP TO CONTINUE";
 }
