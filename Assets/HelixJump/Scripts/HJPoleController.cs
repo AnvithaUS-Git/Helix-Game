@@ -57,7 +57,7 @@ namespace HelixJump
             for (int i = 0; i < platformDetails.Count; i++)
             {
                 GameObject platfm = GetPlatformGameObject(i);
-
+                platfm.SetActive(true);
                 platfm.transform.localPosition = new Vector3(0, initailYPos - (HJConfigManager.Instance().GetDistanceBetweenPlatforms(level) * i), 0);
 
                 platfm.GetComponent<HJPlatFormController>().InitializePlatformForLevel(platformDetails[i], i == platformDetails.Count - 1);
